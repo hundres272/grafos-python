@@ -25,6 +25,7 @@ class MatrizAdjacencia:
         if(self.matriz[nomeV1][nomeV2] != ""):
             return "Ja ha uma relacao entre os vertices"
         self.matriz[nomeV1][nomeV2] = relacao
+        # para que seja um grafo não orientado, descomentar a linha abaixo
         # self.matriz[nomeV2][nomeV1] = relacao
         return (str(nomeV1) + " " + str(nomeV2))
 
@@ -48,7 +49,6 @@ class MatrizAdjacencia:
             return False
         if(self.matriz[v1][v2] == ""):
             return False
-        print(v1, v2)
         return True
 
     def getVizinhos(self, v):

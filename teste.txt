@@ -1,7 +1,0 @@
-digraph G {
-gabriel -> ana [ label= Chefe ]
-edu -> gabriel [ label= Chefe ]
-humil -> edu [ label= Chefe ]
-saulo -> humil [ label= Chefe ]
-fm -> saulo [ label= Chefe ]
-}

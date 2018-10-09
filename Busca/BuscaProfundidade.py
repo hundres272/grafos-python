@@ -28,16 +28,18 @@ class BuscaProfundidade:
             if(not vertices[chave].marcado):
                 self.buscaProfundidadeRecursivo(grafo, vertices[chave], None)
 
-        for vertice in vertices:
-            print("Anterior:", end=' ')
-            if(vertices[vertice].anterior != None):
-                print(vertices[vertice].anterior.nome)
-            else:
-                print("None")
-            print('vertice:', end=' ')
-            print(vertices[vertice].nome)
-            print("tempoA: " + str(vertices[vertice].tempoAbertura) + " tempoF: " + str(vertices[vertice].tempoFechamento))
-            print()
+        # para visualizar os resultados da busca em profundidade, descomentar as linhas abaixo
+        
+        # for vertice in vertices:
+            # print("Anterior:", end=' ')
+            # if(vertices[vertice].anterior != None):
+            #     print(vertices[vertice].anterior.nome)
+            # else:
+            #     print("None")
+            # print('vertice:', end=' ')
+            # print(vertices[vertice].nome)
+            # print("tempoA: " + str(vertices[vertice].tempoAbertura) + " tempoF: " + str(vertices[vertice].tempoFechamento))
+            # print()
 
 
     
