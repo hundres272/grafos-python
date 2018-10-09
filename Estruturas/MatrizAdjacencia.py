@@ -21,10 +21,12 @@ class MatrizAdjacencia:
             self.matriz[chave][nome] = ""
 
     def adicionaAresta(self, nomeV1, nomeV2, relacao):
+        
         if(self.matriz[nomeV1][nomeV2] != ""):
             return "Ja ha uma relacao entre os vertices"
         self.matriz[nomeV1][nomeV2] = relacao
         # self.matriz[nomeV2][nomeV1] = relacao
+        return (str(nomeV1) + " " + str(nomeV2))
 
 
     def __str__(self):
@@ -46,6 +48,7 @@ class MatrizAdjacencia:
             return False
         if(self.matriz[v1][v2] == ""):
             return False
+        print(v1, v2)
         return True
 
     def getVizinhos(self, v):

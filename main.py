@@ -13,12 +13,17 @@ def main():
             matriz.adicionaVertice(entrada)
 
     entrada = ""
+    saida = ""
     while(entrada != "fim"):
         entrada = input().split()
+
         if(entrada[0] != "fim"):
-            matriz.adicionaAresta(entrada[0], entrada[1], "Chefe")
+            saida += "-----------\n"
+            saida += matriz.adicionaAresta(entrada[0], entrada[1], "Chefe") + "\n"
+            saida += matriz.matriz[entrada[0]][entrada[1]] + "\n"
         else:
             entrada = entrada[0]
+    print(saida)
 
     print(matriz)
     dfs = BuscaProfundidade()
@@ -29,6 +34,13 @@ def main():
     calculaAnteriores(lista)
 
     imprimeResultados(matriz)
+
+
+    mat = criaNovaMatrizAdj(lista)
+
+    arq = ArquivoGraph("teste")
+    arq.escreveGrafoDirecionado(mat)
+    arq.close()
 
 def calculaAnteriores(lista):
     for i in range(len(lista) - 1):
@@ -46,5 +58,15 @@ def imprimeResultados(grafo):
         else:
             print(str(vertice) + " (Presidente)")
 
+
+def criaNovaMatrizAdj(lista):
+    matriz = MatrizAdjacencia()
+    for elemento in lista:
+        matriz.adicionaVertice(elemento.nome)
+    
+    for elemento in lista:
+        if(elemento.anterior != None):
+            matriz.adicionaAresta(elemento.anterior.nome, elemento.nome, "Chefe")
+    return matriz
 
 main()

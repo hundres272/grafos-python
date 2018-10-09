@@ -3,7 +3,7 @@ class BuscaProfundidade:
     listaTopologica = []
 
     def buscaProfundidadeRecursivo(self, grafo, verticeAtual, anterior):
-        if(anterior == None and self.tempo != 0):
+        if(verticeAtual.tempoFechamento != None and verticeAtual.anterior == None):
             verticeAtual.anterior = anterior
         if(verticeAtual.marcado):
             return
@@ -13,7 +13,7 @@ class BuscaProfundidade:
         verticeAtual.marcado = True
         for nomeVertice in grafo.vertices:
             vertice = grafo.vertices[nomeVertice]
-            if(grafo.saoVizinhos(verticeAtual.nome, nomeVertice) and not(vertice.marcado)):
+            if(grafo.saoVizinhos(verticeAtual.nome, nomeVertice)):
                 self.buscaProfundidadeRecursivo(grafo, vertice, verticeAtual)
         verticeAtual.tempoFechamento = self.tempo
         self.tempo += 1
