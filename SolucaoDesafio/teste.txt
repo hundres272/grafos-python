@@ -1,0 +1,5 @@
+digraph G {
+thuza -> pika [ label= Chefe ]
+top -> thuza [ label= Chefe ]
+nigolas -> top [ label= Chefe ]
+}
