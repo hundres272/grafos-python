@@ -1,5 +1,8 @@
 digraph G {
-thuza -> pika [ label= Chefe ]
-top -> thuza [ label= Chefe ]
-nigolas -> top [ label= Chefe ]
+brenex -> edu [ label= Chefe ]
+thuza -> ribo [ label= Chefe ]
+thuza -> joble [ label= Chefe ]
+thuza -> brenex [ label= Chefe ]
+silsil -> thuza [ label= Chefe ]
+niconico -> silsil [ label= Chefe ]
 }
